@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<head>
+	<title>Workout Routine Suggestion</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="stylesheet/styling.css">
+</head>
+<body>
+
+<div id="container">
+<h1>Welcome to the Workout Routine Suggester </h1>
+<h3>Let us suggest a routine for you!</h3>
+<br>
+
+<div>
+<p> Where are you working out?</p>
+
+<form>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="atHome" value="option1" checked>
+  <label class="form-check-label" for="atHome">
+    At home (No equipment)
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="atGym" value="option2">
+  <label class="form-check-label" for="atGym">
+    At a gym (full equipment)
+  </label>
+</div>
+</form>
+
+<br>
+
+<p> What is your experience level?</p>
+<form>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="beginner" value="option1" checked>
+  <label class="form-check-label" for="beginner">
+    Beginner
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="advanced" value="option2">
+  <label class="form-check-label" for="advanced">
+    Advanced
+  </label>
+</div>
+</form>
+
+<br>
+
+<p> Gender</p>
+<form>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="male" value="option1" checked>
+  <label class="form-check-label" for="male">
+    Male
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="female" value="option2">
+  <label class="form-check-label" for="female">
+    Female
+  </label>
+</div>
+</form>
+
+<br>
+
+<p> What is your goal?</p>
+
+
+<form>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="cut" value="option1" checked>
+  <label class="form-check-label" for="cut">
+    Cut (Lose weight)
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="bulk" value="option2">
+  <label class="form-check-label" for="bulk">
+    Bulk (Add Muscle)
+  </label>
+</div>
+</form>
+<br>
+</div>
+
+<button id="submit" type="button" class="btn btn-primary">Submit</button>
+
+<br>
+</div>
+
+
+
+
+<!-- <script src="routine.js"></script> !-->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+
+
+var HBBM = "Home Beginner Bulking Routine for Men";
+var HBBW = "Home Beginner Bulking Routine for Women";
+var HBCM = "Home Beginner Cutting Routine for Men";
+var HBCW = "Home Beginner Cutting Routine for Women";
+var HABM = "Home Advanced Bulking Routine for Men";
+var HABW = "Home Advanced Bulking Routine for Women";
+var HACM = "Home Advanced Cutting Routine for Men";
+var HACW = "Home Advanced Cutting Routing for Women";
+var GBBM = "Gym Beginner Bulking Routine for Men";
+var GBBW = "Gym Beginner Bulking Routine for Women";
+var GBCM = "Gym Beginner Cutting Routine for Men";
+var GBCW = "Gym Beginner Cutting Routine for Women";
+var GABM = "Gym Advanced Bulking Routine for Men";
+var GABW = "Gym Advanced Bulking Routine for Women";
+var GACM = "Gym Advanced Cutting Routine for Men";
+var GACW = "Gym Advanced Cutting Routine for Women";
+
+$("#submit").click(function results(){
+
+	if (document.getElementById("atHome").checked) {
+			if(document.getElementById("beginner").checked) {
+				if (document.getElementById("male").checked) {
+					if (document.getElementById("bulk").checked) {
+						alert(HBBM);
+					}
+					else if(document.getElementById("cut").checked) {
+						alert(HBCM);
+					}
+				}
+				else if (document.getElementById("female").checked) {
+					if(document.getElementById("bulk").checked) {
+						newPage = alert(HBBW);
+					}
+					else if(document.getElementById("cut").checked) {
+						newPage = alert(HBCW);
+					}
+				}
+			}
+			else if(document.getElementById("advanced").checked) {
+				if(document.getElementById("male").checked) {
+					if(document.getElementById("bulk").checked) {
+						newPage = alert(HABM);
+					}
+					else if(document.getElementById("cut").checked){
+						newPage = alert(HACM);
+					}
+				}
+				else if(document.getElementById("female").checked) {
+					if(document.getElementById("bulk").checked) {
+						newPage = alert(HABW);
+					}
+					else if(document.getElementById("cut").checked) {
+						newPage = alert(HACW);
+					
+					}
+				}
+		
+			}
+		}
+		else if(document.getElementById("atGym").checked) {
+			if(document.getElementById("beginner").checked) {
+				if(document.getElementById("male").checked) {
+					if(document.getElementById("bulk").checked) {
+						newPage = alert(GBBM);
+					}
+					else if(document.getElementById("cut").checked) {
+						newPage = alert(GBCM);
+					}
+				}
+				else if(document.getElementById("female").checked) {
+					if(document.getElementById("bulk").checked) {
+						newPage = alert(GBBW);
+					}
+					else if(document.getElementById("cut").checked) {
+						newPage = alert(GBCW);
+					}
+				}
+			}
+			else if(document.getElementById("advanced").checked) {
+				if(document.getElementById("male").checked) {
+					if(document.getElementById("bulk").checked) {
+						newPage = alert(GABM);
+					}
+					else if(document.getElementById("cut").checked) {
+						newPage = alert(GACM);
+					}
+				}
+				else if(document.getElementById("female").checked) {
+					if(document.getElementById("bulk").checked){
+						newPage = alert(GABW);
+				}
+					else if(document.getElementById("cut").checked) {
+						newPage = alert(GACW);
+				}
+		
+			}
+		}
+}
+});
+
+
+
+</script>
+
+</body>
+</html>
